@@ -18,9 +18,11 @@ class Employee{
             name = n;
             address = add;
         }
-        Employee(){
-            Employee obj(15, 200000, "Amber", "UK");
-            obj.display();
+        Employee(Employee& o2)
+            code = o2.code;
+            salary = o2.salary;
+            name = o2.name;
+            address = o2.address;
         }
         void display(){
             cout<<"The employee code is: "<<code<<endl;
@@ -31,8 +33,8 @@ class Employee{
         }
 };
 int main(){
-    Employee o1(12, 100000, "Johhny", "USA");
+    Employee o1(12, 100000, "Johhny", "USA"), o2(o1);
     o1.display();
-    Employee o2;
+    o2.display();
     return 0;
 }
